@@ -16,5 +16,17 @@ module.exports = {
         path: `${__dirname}/src/projects/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `videos`,
+        path: `${__dirname}/static/`,
+      },
+    },
   ],
+  siteMetadata: {
+    email: "tobias [dot] m [dot] brady@gmail.com",
+    linkedin: "https://www.linkedin.com/in/tobias-brady/",
+    github: "https://github.com/TobiBrady"
+  }
 }

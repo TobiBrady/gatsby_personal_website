@@ -1,28 +1,22 @@
 import React from 'react'
 import '../styles/global.css'
-import background from "../../static/uganda.jpg"
-import overlay from "../../static/overlay.png"
-import me from "../../static/me.jpeg"
+import me from '../../static/me.jpeg'
 
-{/* style={{ backgroundImage: `url(${overlay}), url(${background})` }} */}
 export default function Sidebar() {
 
-  return (
-    <div className="w-2/5 h-screen sticky top-0 flex flex-col bg-right bg-cover" style={{ backgroundImage: `url(${overlay}), url(${background})` }} >
-        <header className="h-3/4 my-auto mx-16">
-            <div>
-                <div className="flex justify-end">
-                    <img className="rounded-full w-32 h-32 object-cover object-right" src={me} alt="Tobi"></img>
+    return (
+        <div className="lg:w-2/5 lg:h-screen lg:sticky lg:top-0 flex flex-col" >
+
+            <header>
+                <div className="pt-8 md:pb-2 w-full">
+                    <h1 className="text-center text-gray-700 text-6xl md:text-8xl font-extralight tracking-wider"><span className="text-blue-800">Tobi</span> Brady</h1>
                 </div>
-                <div className="pt-20 text-align-right">
-                    <h1 className="text-right text-white w-72 text-2xl ml-auto">Hi my name is Tobi Brady</h1>
-                    <h1 className="text-right text-white w-72 text-2xl ml-auto">welcome to my Project Portfolio</h1>
-                </div>
+            </header>
+            
+            <div className="bg-center bg-cover m-7 lg:h-screen h-auto desktop-image">
+                <img src={ me } alt="Tobi with a lemur" className="lg:hidden" />
             </div>
-        </header>
-        <footer>
-            <p></p>
-        </footer>
-    </div>
-  )
+            
+        </div>
+    )
 }

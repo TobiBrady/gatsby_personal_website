@@ -1,7 +1,7 @@
 ---
-title: Insight Data Analysis Tool
+title: Insight
 date: 2021-03-01T00:00:00+00:00
-stack: [ python, flask, html, tailwindcss ]
-image-name: _____
-description: A web application written for my employer. A python application which utilises the flask library and styled using tailwindcss. The purpose of the application is to automate routine data analysis processes and make them accessable to all staff regardless of their technical knowledge. The data analysis automation was facilitated by the numpy and pandas python libraries.
+stack: [ flask, python, html, tailwindcss ]
+image_name: insight.mp4
+description: This project was completed for my employer at the time. Insight is a web application written in python using the Flask framework and styled using tailwindcss. The application automates routine data analysis processes and makes them accessable to individuals without the technical knowledge to perform the data analysis independently. Within the application you are able to upload template files, perform analysis with customisable inputs, view new and historical results, download output files and manage the saved data. The data analysis automation is performed using the numpy and pandas python libraries.
 ---
