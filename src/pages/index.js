@@ -35,13 +35,13 @@ export default function Home({ data }) {
                 {/* Projects Section */}
                 <div className="pt-10 pb-5">
                     <h1 className="text-gray-800 text-3xl font-extralight tracking-wider">Projects</h1>
-                    <p className="text-gray-500 text-justify pt-5">Listed in this section are a selection of projects I have completed since my first "Hello World" program in 2019. The projects detailed below are available to view on my <a href={ metadata.github } className="underline hover:text-blue-500">Github</a>. However, I no longer own the interlectual property for certain projects and therefore the code is not public. The stack can be seen below each video.</p>
+                    <p className="text-gray-500 text-justify pt-5 pb-4">Listed in this section are a selection of projects I have completed since my first "Hello World" program in 2019. The projects detailed below are available to view on my <a href={ metadata.github } className="underline hover:text-blue-500">Github</a>. However, I no longer own the interlectual property for certain projects and therefore the code is not public. The stack can be seen below each video.</p>
 
                     {/* Map through the markdown files in the src/projects folder */}
                     { projects.map(project => (
                         <div className="py-8 mx-auto w-11/12">
 
-                            <div className="">
+                            <div>
                                 { project.frontmatter.github ? 
                                     <h3 className=" text-2xl text-gray-600"><a className="mr-auto hover:text-blue-500 underline" href={ project.frontmatter.github }>{ project.frontmatter.title }</a></h3> : 
                                     <h3 className="text-2xl text-gray-600">{ project.frontmatter.title }</h3> 
@@ -56,7 +56,7 @@ export default function Home({ data }) {
                                     </video>
                                 </div>
 
-                                <div className="flex justify-center">
+                                <div className="flex justify-center pt-1">
                                     {/* Map through the stack lists in the markdown files */}
                                     { project.frontmatter.stack.map(component => (
                                         <p className="text-gray-500 text-sm border border-gray-300 rounded-full m-1 px-2 w-32 text-center">{ component }</p>
@@ -67,7 +67,7 @@ export default function Home({ data }) {
                     ))}
                 </div>
                 <footer>
-                    <p className="text-center text-gray-400 py-5 text-xs ">© 2021</p>
+                    <p className="text-center text-gray-400 pt-5 pb-7 text-xs ">© 2021</p>
                 </footer>
             </div>
         </div>
