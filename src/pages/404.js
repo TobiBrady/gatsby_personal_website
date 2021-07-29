@@ -15,7 +15,7 @@ export default function Lost() {
             <img src={ trooper } alt="move along" className="m-auto max-h-96" />
 
             <div className="text-center mb-auto text-black font-bold ">
-                <a herf="/" className="hover:text-blue-500">Click here to go about your buisness.</a>
+                <a href="/" className="hover:text-blue-500">Click here to go about your buisness.</a>
             </div>
 
         </div>
