@@ -39,7 +39,7 @@ export default function Home({ data }) {
 
                     {/* Map through the markdown files in the src/projects folder */}
                     { projects.map(project => (
-                        <div className="py-8 mx-auto w-11/12">
+                        <div className="py-8 sm:w-11/12 mx-auto">
 
                             <div>
                                 { project.frontmatter.github ? 
