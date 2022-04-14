@@ -55,7 +55,7 @@ export default function Home({ data }) {
                     { projects.map(project => (
                         <div className="py-8 sm:w-11/12 mx-auto">
 
-                            <div className="text-right -mb-4">
+                            <div className="text-right -mb-1">
 
                                 { project.frontmatter.website_link ? 
                                     <a className="text-gray-500 hover:text-blue-500 mx-1" href={ project.frontmatter.website_link }>
