@@ -51,45 +51,50 @@ export default function Home({ data }) {
                     <h1 className="text-gray-800 text-3xl font-extralight tracking-wider">Projects</h1>
                     <p className="text-gray-500 text-justify pt-5 pb-4">Listed below are a selection of projects I have completed since my first "Hello World" program in 2019. The projects detailed below are available to view on my <a href={ metadata.github } className="underline hover:text-blue-500">Github</a>. However, I no longer own the interlectual property for certain projects and therefore the code is not public. The stack can be seen below each video.</p>
 
-                    {/* Map through the markdown files in the src/projects folder */}
-                    { projects.map(project => (
-                        <div className="py-8 sm:w-11/12 mx-auto">
+                    <div className="divide-y">
+                        {/* Map through the markdown files in the src/projects folder */}
+                        { projects.map(project => (
+                            <div className="py-8 pt-6 sm:w-11/12 mx-auto">
 
-                            <div className="text-right -mb-1">
+                                <div className="text-right mb-1">
 
-                                { project.frontmatter.website_link ? 
-                                    <a className="text-gray-500 hover:text-blue-500 mx-1" href={ project.frontmatter.website_link }>
-                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 inline" viewBox="0 0 20 20" fill="currentColor">
+                                    { project.frontmatter.website_link ? 
+                                        <a className="text-gray-500 hover:text-blue-500 mx-1" href={ project.frontmatter.website_link }>
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 inline" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
+                                            </svg>
+                                        </a> : 
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 inline text-white" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd" />
-                                        </svg>
-                                    </a> : null }
+                                        </svg> }
 
-                                { project.frontmatter.github ? 
-                                    <a className="text-gray-500 hover:text-blue-500 mx-1" href={ project.frontmatter.github }>
-                                        <svg className="w-7 h-7 inline" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path> 
-                                        </svg>
-                                    </a> : null }
-                            </div>
-
-                            <div>
-                                <h3 className="text-2xl text-gray-600 font-extralight">{ project.frontmatter.title }</h3>     
-                                <h4 className="text-gray-500 text-justify pt-2">{ project.frontmatter.description }</h4>
-                                
-                                <div className="pt-4 mx-2">
-                                    <video className="video-container video-container-overlay max-h-96 mx-auto md:max-w-5/6 bg-black" controls>
-                                        <source src={ project.frontmatter.video_name } type="video/mp4" />
-                                        <track />
-                                    </video>
+                                    { project.frontmatter.github ? 
+                                        <a className="text-gray-500 hover:text-blue-500 mx-1" href={ project.frontmatter.github }>
+                                            <svg className="w-7 h-7 inline" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path> 
+                                            </svg>
+                                        </a> : null }
                                 </div>
 
-                                <div className=" font-extralight tracking-wider flex pt-2 mx-2">
-                                    {/* Map through the stack lists in the markdown files */}
-                                    <p className="text-gray-500"><span className=" text-blue-500">Stack: </span>{project.frontmatter.stack}</p>
+                                <div>
+                                    <h3 className="text-2xl text-gray-600 font-extralight">{ project.frontmatter.title }</h3>     
+                                    <h4 className="text-gray-500 text-justify pt-2">{ project.frontmatter.description }</h4>
+                                    
+                                    <div className="pt-4 mx-2">
+                                        <video className="video-container video-container-overlay max-h-96 mx-auto md:max-w-5/6 bg-black" controls>
+                                            <source src={ project.frontmatter.video_name } type="video/mp4" />
+                                            <track />
+                                        </video>
+                                    </div>
+
+                                    <div className=" font-extralight tracking-wider flex pt-2 mx-2">
+                                        {/* Map through the stack lists in the markdown files */}
+                                        <p className="text-gray-500"><span className=" text-blue-500">Stack: </span>{project.frontmatter.stack}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>              
-                    ))}
+                            </div>              
+                        ))}
+                    </div>
                 </div>
 
                 <footer>
