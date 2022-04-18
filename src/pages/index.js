@@ -87,9 +87,9 @@ export default function Home({ data }) {
                                         </video>
                                     </div>
 
-                                    <div className=" font-extralight tracking-wider flex pt-2 mx-2">
+                                    <div className="font-extralight tracking-wider flex pt-2 mx-2 justify-center">
                                         {/* Map through the stack lists in the markdown files */}
-                                        <p className="text-gray-500"><span className=" text-blue-500">Stack: </span>{project.frontmatter.stack}</p>
+                                        <p className="text-gray-500"><span className="text-blue-500">Stack: </span>{project.frontmatter.stack}</p>
                                     </div>
                                 </div>
                             </div>              
