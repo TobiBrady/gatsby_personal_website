@@ -98,7 +98,7 @@ export default function Home({ data }) {
                 </div>
 
                 <footer>
-                    <p className="text-center text-gray-400 pt-5 pb-7 text-xs ">© 2022</p>
+                    <p className="text-center text-gray-400 pt-5 pb-7 text-xs ">© 2023</p>
                 </footer>
             </div>
         </div>
